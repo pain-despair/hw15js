@@ -53,7 +53,7 @@ console.log("Результат: " + result);
 
 function x2Array() {
     let rows = parseInt(prompt("Введите количество строк:"));
-    let cols = parseInt(prompt("Введіть кількість столбцов:"));
+    let cols = parseInt(prompt("Введите количество столбцов:"));
 
     let arr = new x2Array(rows);
     for (let i = 0; i < rows; i++) {
@@ -70,3 +70,19 @@ function x2Array() {
 }
 const userArray = x2Array();
 console.log(userArray);
+
+function removeChars(inputStr, charsToRemove) {
+    let inputArray = inputStr.split('');
+
+    let filteredArray = inputArray.filter(char => !charsToRemove.includes(char));
+
+    let resultStr = filteredArray.join('');
+
+    return resultStr;
+}
+
+let inputStr = prompt("Введите входную строку:");
+let charsToRemove = prompt("Введите символы для удаления (без пробела):").split('');
+
+let res = removeChars(inputStr, charsToRemove);
+console.log(res);
